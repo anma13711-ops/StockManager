@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Todos los componentes Material (botones, campos, selectores, diálogos) en azul -->
+    <style name="ThemeOverlay.StockManager" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">@color/sm_primario</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/sm_primario_suave</item>
+        <item name="colorOnPrimaryContainer">@color/sm_primario</item>
+        <item name="colorSecondary">@color/sm_primario</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorSecondaryContainer">@color/sm_primario_suave</item>
+        <item name="colorOnSecondaryContainer">@color/sm_primario</item>
+        <item name="colorControlActivated">@color/sm_primario</item>
+    </style>
+</resources>

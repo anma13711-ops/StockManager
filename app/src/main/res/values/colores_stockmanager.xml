@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sm_fondo">#F3F5FA</color>
+    <color name="sm_superficie">#FFFFFF</color>
+    <color name="sm_header">#0F172A</color>
+    <color name="sm_subtitulo">#CBD5E1</color>
+    <color name="sm_primario">#2563EB</color>
+    <color name="sm_primario_suave">#DBEAFE</color>
+    <color name="sm_cian">#22D3EE</color>
+    <color name="sm_gris">#64748B</color>
+    <color name="sm_borde">#E2E8F0</color>
+</resources>

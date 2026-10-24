@@ -72,7 +72,8 @@ interface MovimientoDao {
                c.nombre AS categoria, p.stockMinimo AS stockMinimo,
                COALESCE(SUM(CASE WHEN m.tipo = 'ENTRADA' THEN m.cantidad ELSE -m.cantidad END), 0) AS stock
         FROM productos p
-        INNER JOIN categorias c ON c.id = p.categoriaId        LEFT JOIN movimientos m ON m.codigoProducto = p.codigo
+        INNER JOIN categorias c ON c.id = p.categoriaId
+        LEFT JOIN movimientos m ON m.codigoProducto = p.codigo
         GROUP BY p.codigo
         ORDER BY p.codigo
         """

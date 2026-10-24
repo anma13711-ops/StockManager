@@ -14,44 +14,45 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- ===== Encabezado ===== -->
-        <com.google.android.material.card.MaterialCardView
+        <!-- ===== Encabezado con degradado ===== -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/sm_header"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="0dp">
+            android:background="@drawable/fondo_encabezado"
+            android:orientation="vertical"
+            android:padding="22dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:letterSpacing="0.15"
+                android:text="🖥️  COMPONENTES DE PC"
+                android:textColor="@color/sm_cian"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="0.15"
-                    android:text="COMPONENTES DE PC"
-                    android:textColor="@color/sm_cian"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="StockManager"
+                android:textColor="@android:color/white"
+                android:textSize="32sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="StockManager"
-                    android:textColor="@android:color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Inventario que funciona sin internet"
-                    android:textColor="@color/sm_subtitulo" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/etiqueta_cian"
+                android:paddingStart="12dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="4dp"
+                android:text="●  Funciona sin internet"
+                android:textColor="@color/sm_cian"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <!-- ===== Formulario ===== -->
         <com.google.android.material.card.MaterialCardView
@@ -59,45 +60,72 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/sm_superficie"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0dp"
-            app:strokeColor="@color/sm_borde"
-            app:strokeWidth="1dp">
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="@color/sm_primario" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Nuevo movimiento"
+                        android:textColor="@color/sm_header"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nuevo movimiento"
-                    android:textColor="@color/sm_primario"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Producto"
+                    android:layout_marginTop="14dp"
+                    android:text="Componente"
                     android:textColor="@color/sm_gris"
                     android:textSize="12sp" />
 
-                <Spinner
-                    android:id="@+id/spProducto"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="48dp" />
+                    android:layout_marginTop="4dp"
+                    app:cardBackgroundColor="@color/sm_fondo"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/sm_borde"
+                    app:strokeWidth="1dp">
+
+                    <Spinner
+                        android:id="@+id/spProducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="52dp" />
+                </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="Cantidad">
+                    android:layout_marginTop="12dp"
+                    android:hint="Cantidad"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusTopStart="14dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etCantidad"
@@ -111,7 +139,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:hint="Almacén">
+                    android:hint="Almacén"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusTopStart="14dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etAlmacen"
@@ -125,7 +157,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:hint="Responsable">
+                    android:hint="Responsable"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusTopStart="14dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etResponsable"
@@ -138,7 +174,7 @@
                     android:id="@+id/rgTipo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     app:checkedButton="@id/rbEntrada"
                     app:selectionRequired="true"
                     app:singleSelection="true">
@@ -147,39 +183,48 @@
                         android:id="@+id/rbEntrada"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="52dp"
                         android:layout_weight="1"
-                        android:text="Entrada" />
+                        android:text="⬇  Entrada"
+                        android:textAllCaps="false" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/rbSalida"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="52dp"
                         android:layout_weight="1"
-                        android:text="Salida" />
+                        android:text="⬆  Salida"
+                        android:textAllCaps="false" />
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnGuardar"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="56dp"
                         android:layout_weight="1"
-                        android:text="Registrar" />
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Registrar"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        app:cornerRadius="28dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnCancelar"
-                        style="@style/Widget.Material3.Button.TextButton"
+                        style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
                         android:text="Cancelar"
-                        android:visibility="gone" />
+                        android:textAllCaps="false"
+                        android:visibility="gone"
+                        app:cornerRadius="28dp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -190,46 +235,74 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/sm_superficie"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="24dp"
             app:cardElevation="0dp"
-            app:strokeColor="@color/sm_borde"
-            app:strokeWidth="1dp">
+            app:strokeColor="@color/sm_cian"
+            app:strokeWidth="2dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Stock actual"
-                    android:textColor="@color/sm_primario"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="20dp"
+                        android:background="@color/sm_cian" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Stock actual"
+                        android:textColor="@color/sm_header"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvStock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="6dp"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="8dp"
                     android:text="Cargando…"
-                    android:textColor="@color/sm_header" />
+                    android:textColor="@color/sm_header"
+                    android:textSize="14sp"
+                    android:typeface="monospace" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- ===== Historial ===== -->
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
-            android:text="Historial de movimientos"
-            android:textColor="@color/sm_header"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="22dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:background="@color/sm_primario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Historial de movimientos"
+                android:textColor="@color/sm_header"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMovimientos"

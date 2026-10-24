@@ -1,45 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    app:cardBackgroundColor="@color/sm_superficie"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/sm_borde"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvDetalle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <!-- Franja de color a la izquierda -->
+        <View
+            android:layout_width="6dp"
+            android:layout_height="match_parent"
+            android:background="@color/sm_cian" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="12dp">
 
-            <Button
-                android:id="@+id/btnEditar"
-                style="@style/Widget.Material3.Button.TextButton"
+            <TextView
+                android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Editar" />
+                android:textColor="@color/sm_header"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnEliminar"
-                style="@style/Widget.Material3.Button.TextButton"
+            <TextView
+                android:id="@+id/tvDetalle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Eliminar" />
+                android:layout_marginTop="2dp"
+                android:lineSpacingExtra="2dp"
+                android:textColor="@color/sm_gris" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditar"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEliminar"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar"
+                    android:textAllCaps="false"
+                    android:textColor="#DC2626" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
